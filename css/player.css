@@ -217,9 +217,27 @@ a {
     height: 90px;
     margin: 0 auto;
     background-color: #222222;
+    transition: .4s ease-in-out;
 }
-
-
+.hidePlayBar {
+    transform: translate(0, 90px)
+}
+.showBar {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background: #222 url(../images/arrow_top.svg) 50% -30% / 50% 75% no-repeat;
+    top: -24px;
+    z-index: 9;
+    right: 150px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: .4s ease-in-out;
+}
+.showPlayBar .showBar {
+   transform: rotate(180deg);
+   background: #222 url(../images/arrow_top.svg) 50% 30% / 50% 75% no-repeat;
+}
 .m-playbar .btns {
     width: 157px;
     padding: 27px 0 0 19px;
@@ -228,6 +246,7 @@ a {
 .m-playbar .btns, .m-playbar .head, .m-playbar .play, .m-playbar .volum, .m-playbar .oper {
     float: left;
 }
+
 
 .m-pbar .btn i {
     visibility: hidden;
@@ -1212,3 +1231,8 @@ color: #333333;
 .search-pagination label {
     margin: 0 15px;
 }
+
+
+
+
+

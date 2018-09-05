@@ -436,7 +436,8 @@
 
     <!-- page footer -->
     <div class="mastfoot">
-      <div class="m-playbar" >
+      <div class="m-playbar"  ng-class="{true:'hidePlayBar',false:'showPlayBar'}[showBar]" >
+        <div ng-click="showPlayBar()" class="showBar" title="{{showBar?'显示':'隐藏'}}"></div>
         <div class="btns">
           <a class="previous" title="上一首([)" prev-track >上一首([)</a>
           <a class="play" ng-class="{pas: isPlaying}" title="播放/暂停(p)" play-pause-toggle>播放/暂停(p)</a>

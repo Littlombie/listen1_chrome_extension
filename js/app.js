@@ -115,7 +115,8 @@
 
     $scope.lastfm = lastfm;
     $scope.github = github;
-
+    
+    $scope.showBar = true;
     $scope.$on('isdoubanlogin:update', function(event, data) {
       $scope.isDoubanLogin = data;
     });
@@ -171,7 +172,10 @@
           $scope.window_type = 'list';
       });
     };
-
+   
+    $scope.showPlayBar = function () {
+      $scope.showBar = !$scope.showBar;
+    }
     $scope.closeWindow = function(){
       $scope.is_window_hidden = 1;
       $scope.resetWindow();
@@ -1202,7 +1206,7 @@
       var w = angular.element($window);
           var changeHeight = function(){
             var headerHeight = 90;
-            var footerHeight = 90;
+            var footerHeight = 20;
             element.css('height', (w.height() - headerHeight - footerHeight) + 'px' );
           };
         w.bind('resize', function () {
